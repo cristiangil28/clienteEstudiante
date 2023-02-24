@@ -7,6 +7,7 @@ import { EstudianteComponent } from './components/estudiante/estudiante.componen
 import { ExploreComponent } from './components/explore/explore.component';
 import { HeaderComponent } from './components/header/header.component';
 import {RouterModule, Routes} from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   {path:'', component: ExploreComponent},
   {path: 'estudiante', component: EstudianteComponent}
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes
     ),
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

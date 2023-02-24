@@ -6,11 +6,10 @@ import { AppComponent } from './app.component';
 import { EstudianteComponent } from './components/estudiante/estudiante.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { HeaderComponent } from './components/header/header.component';
-import {Routes} from '@angular/router';
+import {RouterModule, Routes} from '@angular/router';
 const appRoutes: Routes = [
   {path:'', component: ExploreComponent},
   {path: 'estudiante', component: EstudianteComponent}
-  {path: 'header', component: HeaderComponent}
 ]
 @NgModule({
   declarations: [
@@ -21,7 +20,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(
+      appRoutes
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]

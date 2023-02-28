@@ -10,16 +10,20 @@ import {RouterModule, Routes} from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from '@angular/common/http';
+import { AddEstudianteComponent } from './components/add-estudiante/add-estudiante.component';
+import { ReactiveFormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   {path:'', component: ExploreComponent},
-  {path: 'estudiante', component: EstudianteComponent}
+  {path: 'estudiante', component: EstudianteComponent},
+  {path: 'addestudiante', component: AddEstudianteComponent}
 ]
 @NgModule({
   declarations: [
     AppComponent,
     EstudianteComponent,
     ExploreComponent,
-    HeaderComponent
+    HeaderComponent,
+    AddEstudianteComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ const appRoutes: Routes = [
     ),
     BrowserAnimationsModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

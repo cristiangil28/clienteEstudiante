@@ -1,5 +1,5 @@
-<div class="container">
-    <div class="row">
-        <li *ngFor="let estudiante of estudiantesList"> {{estudiante.nombre}}</li>
-    </div>
+<div class="container" *ngFor="let estudiante of estudiantesList">
+        <li *ngIf = "estudiante.nombre" >{{estudiante.nombre}}</li>
+        <li *ngIf = "estudiante.apellidos"> {{estudiante.apellidos}}</li>
+        <hr>
 </div>

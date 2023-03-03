@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card">
     <div class="card-header">
-      <h4 class="text-center">Editar Estudiante</h4>
+      <h4 class="text-center">Crear Estudiante</h4>
     </div>
     <div class="card-body">
       <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
@@ -16,9 +16,19 @@
           <input formControlName="apellidos" placeholder="Apellidos" name="apellidos" class="form-control"
             id="apellidos" required>
         </div>
-
-        <button class="btn btn-success">Aceptar</button>
-        <button class="btn btn-primary" routerLink="/">Regresar</button>
+        <div class="container">
+          <div class="row">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-success">Crear</button>
+            
+          </div>
+          <br>
+        <br>
+          <div class="col-md-12 text-center">
+          <button class="btn btn-primary" routerLink="/">Regresar</button>
+          </div>
+        </div>
+        </div>
       </form>
     </div>
   </div>

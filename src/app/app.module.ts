@@ -12,10 +12,11 @@ import {MatCardModule} from '@angular/material/card';
 import {HttpClientModule} from '@angular/common/http';
 import { AddEstudianteComponent } from './components/add-estudiante/add-estudiante.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditEstudianteComponent } from './components/edit-estudiante/edit-estudiante.component';
 const appRoutes: Routes = [
-  {path:'', component: ExploreComponent},
-  {path: 'estudiante', component: EstudianteComponent},
-  {path: 'addestudiante', component: AddEstudianteComponent}
+  {path: '', component: EstudianteComponent},
+  {path: 'addestudiante', component: AddEstudianteComponent},
+  {path: 'editestudiante/:id', component: EditEstudianteComponent}
 ]
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     ExploreComponent,
     HeaderComponent,
     AddEstudianteComponent,
+    EditEstudianteComponent,
   ],
   imports: [
     BrowserModule,

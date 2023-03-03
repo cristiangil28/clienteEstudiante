@@ -5,8 +5,7 @@ import { EstudianteServiceService } from 'src/app/servicios/estudiante-service.s
 
 @Component({
   selector: 'app-add-estudiante',
-  templateUrl: './add-estudiante.component.html',
-  styleUrls: ['./add-estudiante.component.scss']
+  templateUrl: './add-estudiante.component.html'
 })
 export class AddEstudianteComponent {
   constructor(private formBuilder: FormBuilder, private router: Router, private service: EstudianteServiceService){

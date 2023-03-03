@@ -1,5 +1,36 @@
-<div class="container" *ngFor="let estudiante of estudiantesList">
-        <li *ngIf = "estudiante.nombre" >{{estudiante.nombre}}</li>
-        <li *ngIf = "estudiante.apellidos"> {{estudiante.apellidos}}</li>
+<!--<div class="container" *ngFor="let estudiante of estudiantesList">
+        <li *ngIf="estudiante.id">{{estudiante.id}}</li>
+        <li *ngIf="estudiante.nombre">{{estudiante.nombre}}</li>
+        <li *ngIf="estudiante.apellidos"> {{estudiante.apellidos}}</li>
+        <button class="btn btn-primary" [routerLink]="['/editestudiante',estudiante.id]">Editar</button>
         <hr>
+</div>-->
+<div class="container">
+        <div class="card">
+                <div class="card-header">
+                        <button class="btn btn-success" [routerLink]="['/addestudiante']">Crear Estudiante</button>
+                </div>
+                <div class="card-body">
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                                <td>ID</td>
+                                                <td>NOMBRE</td>
+                                                <td>APELLIDOS</td>
+                                                <td>ACCIONES</td>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor="let estudiante of estudiantesList">
+                                                <td *ngIf="estudiante.id">{{estudiante.id}}</td>
+                                                <td *ngIf="estudiante.nombre">{{estudiante.nombre}}</td>
+                                                <td *ngIf="estudiante.apellidos"> {{estudiante.apellidos}}</td>
+                                                <td><button class="btn btn-primary"
+                                                                [routerLink]="['/editestudiante',estudiante.id]">Editar</button>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+        </div>
 </div>

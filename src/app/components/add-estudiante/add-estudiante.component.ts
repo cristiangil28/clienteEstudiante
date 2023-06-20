@@ -21,7 +21,7 @@ export class AddEstudianteComponent {
   onSubmit() {
     this.service.createEstudiante( this.addForm.value )
       .subscribe(data => {
-        this.router.navigate(['/estudiante']);
+        this.router.navigate(['/']);
         
       });
   }

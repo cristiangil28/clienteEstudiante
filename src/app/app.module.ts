@@ -16,7 +16,7 @@ import { EditEstudianteComponent } from './components/edit-estudiante/edit-estud
 const appRoutes: Routes = [
   {path: '', component: EstudianteComponent},
   {path: 'addestudiante', component: AddEstudianteComponent},
-  {path: 'editestudiante/:id', component: EditEstudianteComponent}
+  {path: 'editestudiante/:id', component: EditEstudianteComponent},
 ]
 @NgModule({
   declarations: [

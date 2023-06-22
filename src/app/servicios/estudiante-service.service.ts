@@ -22,10 +22,14 @@ export class EstudianteServiceService {
 
   createEstudiante(estudiante: Estudiante): Observable<Estudiante> {
     var sufix ='crearestudiante';
-    return this.http.post<Estudiante>(`${this.baseUrl}/${sufix}`, estudiante, {headers: this.httpHeaders});
+    return this.http.post<Estudiante>(`${this.baseUrl}/${sufix}`, estudiante, {headers: this.httpHeaders,responseType : 'json'});
   }
   updateEstudiante(id:number, estudiante: Estudiante): Observable<any> {
     estudiante.id = id;
     return this.http.put(`${this.baseUrl}/actualizarEstudiante/{ID}?id=${estudiante.id}`, estudiante,{headers: this.httpHeaders});
+  }
+
+  deleteEstudiante(id:number):Observable<any>{
+    return this.http.delete(`${this.baseUrl}/eliminarEstudiante/{ID}?id=${id}`);
   }
 }

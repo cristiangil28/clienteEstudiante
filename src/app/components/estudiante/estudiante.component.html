@@ -27,6 +27,8 @@
                                                 <td *ngIf="estudiante.apellidos"> {{estudiante.apellidos}}</td>
                                                 <td><button class="btn btn-primary"
                                                                 [routerLink]="['/editestudiante',estudiante.id]">Editar</button>
+                                                        <button class="btn btn-danger"
+                                                                (click)="deleteEstudiante(estudiante.id)">Eliminar</button>
                                                 </td>
                                         </tr>
                                 </tbody>

@@ -16,6 +16,10 @@ export class AddEstudianteComponent {
     this.addForm = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellidos: ['', Validators.required],
+      correo: ['', Validators.required],
+      telefono: ['', Validators.required],
+      tipoUsuario: ['', Validators.required],
+      documento: ['', Validators.required],
     });
   }
   onSubmit() {

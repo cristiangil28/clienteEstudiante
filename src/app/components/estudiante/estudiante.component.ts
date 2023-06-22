@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EstudianteServiceService } from 'src/app/servicios/estudiante-service.service';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-estudiante',
@@ -8,7 +9,8 @@ import { EstudianteServiceService } from 'src/app/servicios/estudiante-service.s
 })
 export class EstudianteComponent {
   estudiantesList:any = [];
-  constructor(private estudiante: EstudianteServiceService){
+  id: any;
+  constructor(private estudiante: EstudianteServiceService,private router: Router){
 
   }
 
@@ -16,5 +18,9 @@ export class EstudianteComponent {
     console.log('El componente se ha inicializado');
     
     this.estudiante.getEstudiantes().subscribe(x => this.estudiantesList = x);
+  }
+  deleteEstudiante(id: number){
+    this.estudiante.deleteEstudiante(id)
+      .subscribe(x => this.estudiante.getEstudiantes().subscribe(res => this.estudiantesList = res));
   }
 }

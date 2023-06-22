@@ -15,16 +15,20 @@
                                 <thead>
                                         <tr>
                                                 <td>ID</td>
+                                                <td>DOCUMENTO</td>
                                                 <td>NOMBRE</td>
                                                 <td>APELLIDOS</td>
+                                                <td>CORREO</td>
                                                 <td>ACCIONES</td>
                                         </tr>
                                 </thead>
                                 <tbody>
                                         <tr *ngFor="let estudiante of estudiantesList">
                                                 <td *ngIf="estudiante.id">{{estudiante.id}}</td>
+                                                <td *ngIf="estudiante.documento"> {{estudiante.documento}}</td>
                                                 <td *ngIf="estudiante.nombre">{{estudiante.nombre}}</td>
                                                 <td *ngIf="estudiante.apellidos"> {{estudiante.apellidos}}</td>
+                                                <td *ngIf="estudiante.correo"> {{estudiante.correo}}</td>
                                                 <td><button class="btn btn-primary"
                                                                 [routerLink]="['/editestudiante',estudiante.id]">Editar</button>
                                                         <button class="btn btn-danger"

@@ -26,7 +26,11 @@ export class EditEstudianteComponent {
     this.addForm = this.formBuilder.group({
       id: [],
       nombre: ['', Validators.required],
-      apellidos: ['', Validators.required]
+      apellidos: ['', Validators.required],
+      correo: ['', Validators.required],
+      telefono: ['', Validators.required],
+      tipoUsuario: ['', Validators.required],
+      documento: ['', Validators.required]
     });
     
     console.log(this.activeRouter.snapshot.paramMap.get('id'));

@@ -22,6 +22,26 @@
           <input formControlName="apellidos" [(ngModel)]="estudiante.apellidos" placeholder="Apellidos" name="apellidos"
             class="form-control" id="apellidos" required>
         </div>
+        <div class="form-group">
+          <label for="phone">Telefono:</label>
+          <input formControlName="telefono" [(ngModel)]="estudiante.telefono" placeholder="Telefono" name="telefono"
+            class="form-control" id="telefono" required>
+        </div>
+        <div class="form-group">
+          <label for="tipoUsuario">Tipo Usuario:</label>
+          <input formControlName="tipoUsuario" [(ngModel)]="estudiante.tipoUsuario" name="tipoUsuario"
+            class="form-control" id="tipoUsuario" readonly>
+        </div>
+        <div class="form-group">
+          <label for="document">Documento:</label>
+          <input formControlName="documento" [(ngModel)]="estudiante.documento" name="documento"
+            class="form-control" id="documento" readonly>
+        </div>
+        <div class="form-group">
+          <label for="email">Correo:</label>
+          <input formControlName="correo" [(ngModel)]="estudiante.correo" name="correo"
+            class="form-control" id="correo" required>
+        </div>
         <div class="container">
           <div class="col-md-12 text-center">
             <button class="btn btn-success">Editar</button>

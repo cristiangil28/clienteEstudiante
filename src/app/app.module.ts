@@ -13,10 +13,16 @@ import {HttpClientModule} from '@angular/common/http';
 import { AddEstudianteComponent } from './components/add-estudiante/add-estudiante.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EditEstudianteComponent } from './components/edit-estudiante/edit-estudiante.component';
+import { MateriaComponent } from './components/materia/materia.component';
+import { EditMateriaComponent } from './components/edit-materia/edit-materia.component';
+import { AddMateriaComponent } from './components/add-materia/add-materia.component';
 const appRoutes: Routes = [
   {path: '', component: EstudianteComponent},
   {path: 'addestudiante', component: AddEstudianteComponent},
   {path: 'editestudiante/:id', component: EditEstudianteComponent},
+  {path: 'materias', component: MateriaComponent},
+  {path: 'addmateria', component: AddMateriaComponent},
+  {path: 'editmateria/:id', component: EditMateriaComponent},
 ]
 @NgModule({
   declarations: [
@@ -26,6 +32,9 @@ const appRoutes: Routes = [
     HeaderComponent,
     AddEstudianteComponent,
     EditEstudianteComponent,
+    MateriaComponent,
+    EditMateriaComponent,
+    AddMateriaComponent
   ],
   imports: [
     BrowserModule,

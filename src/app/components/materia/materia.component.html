@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card">
+            <div class="card-header">
+                    <div class="row">
+                            <div class="col-md-2 col-xs-6">
+                                    <button class="btn btn-success" [routerLink]="['/addmateria']">Crear Materia</button>
+                            </div>
+                            <div class="col-md-2 col-xs-6">
+                                    <button class="btn btn-success" [routerLink]="['/']">Listar Estudiantes</button>
+                            </div>
+                    </div>
+            </div>
+            <div class="card-body">
+                    <table class="table">
+                            <thead>
+                                    <tr>
+                                            <td>ID</td>
+                                            <td>NOMBRE</td>
+                                            <td>CRÉDITOS</td>
+                                            <td>ACCIONES</td>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor="let materia of materiasList">
+                                            <td *ngIf="materia.id">{{materia.id}}</td>
+                                            <td *ngIf="materia.nombreMateria"> {{materia.nombreMateria}}</td>
+                                            <td *ngIf="materia.creditos">{{materia.creditos}}</td>
+                                            <td><button class="btn btn-primary"
+                                                            [routerLink]="['/editmateria',materia.id]">Editar</button>
+                                                    <button class="btn btn-danger"
+                                                            (click)="deleteMateria(materia.id)">Eliminar</button>
+                                            </td>
+                                    </tr>
+                            </tbody>
+                    </table>
+            </div>
+    </div>
+</div>

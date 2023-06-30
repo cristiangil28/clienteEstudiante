@@ -32,7 +32,7 @@ export class AddEstudianteComponent {
         });
       Swal.fire({
         title: 'Exitosamente',
-        text: 'Se ha guardado la materia',
+        text: 'Se ha guardado el estudiante',
         icon: 'success',
         confirmButtonText: 'Ok'
       })

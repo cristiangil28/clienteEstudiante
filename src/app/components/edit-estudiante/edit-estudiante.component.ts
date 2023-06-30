@@ -45,7 +45,7 @@ export class EditEstudianteComponent {
         });
       Swal.fire({
         title: 'Exitosamente',
-        text: 'Se ha guardado la materia',
+        text: 'Se ha actualizado el estudiante',
         icon: 'success',
         confirmButtonText: 'Ok'
       })

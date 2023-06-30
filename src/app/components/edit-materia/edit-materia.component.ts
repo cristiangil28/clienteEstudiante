@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Materia } from 'src/app/modelos/materia/materia';
 import { MateriaService } from 'src/app/servicios/materia/materia.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-materia',
@@ -29,11 +30,24 @@ export class EditMateriaComponent {
     });
   }
   onSubmit() {
-    console.log(this.addForm.value.id);
+    if (this.addForm.valid) {
     this.service.updateMateria( this.addForm.value.id,this.addForm.value )
       .subscribe(data => {
         this.router.navigate(['/materias']);
-        
       });
+      Swal.fire({
+        title: 'Exitosamente',
+        text: 'Se ha actualizado la materia',
+        icon: 'success',
+        confirmButtonText: 'Ok'
+      })
+    }else{
+      Swal.fire({
+        title: 'Error!',
+        text: 'Faltan Datos',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+      })
+    }
   }
 }

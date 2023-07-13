@@ -16,6 +16,7 @@ import { EditEstudianteComponent } from './components/edit-estudiante/edit-estud
 import { MateriaComponent } from './components/materia/materia.component';
 import { EditMateriaComponent } from './components/edit-materia/edit-materia.component';
 import { AddMateriaComponent } from './components/add-materia/add-materia.component';
+import { MostrarMateriasComponent } from './components/materia/mostrar-materias/mostrar-materias.component';
 const appRoutes: Routes = [
   {path: '', component: EstudianteComponent},
   {path: 'addestudiante', component: AddEstudianteComponent},
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   {path: 'materias', component: MateriaComponent},
   {path: 'addmateria', component: AddMateriaComponent},
   {path: 'editmateria/:id', component: EditMateriaComponent},
+  {path: 'mostrarMaterias/:id', component: MostrarMateriasComponent},
 ]
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     EditEstudianteComponent,
     MateriaComponent,
     EditMateriaComponent,
-    AddMateriaComponent
+    AddMateriaComponent,
+    MostrarMateriasComponent
   ],
   imports: [
     BrowserModule,

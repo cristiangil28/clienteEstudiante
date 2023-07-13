@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="card">
+            <div class="card-header">
+                <h4>Materias Inscritas</h4>
+            </div>
+            <div class="card-body">
+                    <table class="table">
+                            <thead>
+                                    <tr>
+                                        <td>ID</td>
+                                        <td>NOMBRE MATERIA</td>
+                                        <td>CREDITOS</td>
+                                    </tr>
+                            </thead>
+                            <tbody>
+                                    <tr *ngFor="let estudiante of materiasInscritasList">
+                                            <td *ngIf="estudiante.id">{{estudiante.id}}</td>
+                                            <td *ngIf="estudiante.nombreMateria">{{estudiante.nombreMateria}}</td>
+                                            <td *ngIf="estudiante.creditos">{{estudiante.creditos}}</td>
+                                    </tr>
+                            </tbody>
+                    </table>
+            </div>
+    </div>
+</div>

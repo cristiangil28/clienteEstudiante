@@ -36,10 +36,12 @@
                                                 <td *ngIf="estudiante.nombre">{{estudiante.nombre}}</td>
                                                 <td *ngIf="estudiante.apellidos"> {{estudiante.apellidos}}</td>
                                                 <td *ngIf="estudiante.correo"> {{estudiante.correo}}</td>
-                                                <td><button class="btn btn-primary"
+                                                <td>
+                                                        <button class="btn btn-primary"
                                                                 [routerLink]="['/editestudiante',estudiante.id]">Editar</button>
                                                         <button class="btn btn-danger"
                                                                 (click)="deleteEstudiante(estudiante.id)">Eliminar</button>
+                                                        <button class="btn btn-warning"  [routerLink]="['/mostrarMaterias',estudiante.id]">Materias Inscritas</button>
                                                 </td>
                                         </tr>
                                 </tbody>

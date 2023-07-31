@@ -1,0 +1,45 @@
+<div class="container" *ngIf="estudiante">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="text-center">Matricular Materia</h4>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <input formControlName="id" [(ngModel)]="estudiante.id" placeholder="id" name="id" class="form-control"
+              id="id" required readonly type="hidden">
+          </div>
+          <div class="form-group">
+            <label for="firstName">Nombre:</label>
+            <input formControlName="nombre" [(ngModel)]="estudiante.nombre" placeholder="Nombre" name="nombre"
+              class="form-control" id="nombre" required>
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Apellido:</label>
+            <input formControlName="apellidos" [(ngModel)]="estudiante.apellidos" placeholder="Apellidos" name="apellidos"
+              class="form-control" id="apellidos" required>
+          </div>
+          <div class="form-group">
+            <label for="document">Documento:</label>
+            <input formControlName="documento" [(ngModel)]="estudiante.documento" name="documento"
+              class="form-control" id="documento" readonly>
+          </div>
+          <div class="form-group">
+            <label for="tipoUsuario">Materia</label>
+            <select class="form-control" id="idMateria" name="idMateria" formControlName="idMateria"> 
+                <option value="">Seleccionar materia</option>
+                <option *ngFor="let c of estudianteList" [ngValue]="c">{{c.nombreMateria}}</option>
+            </select>
+          </div>
+          <div class="container">
+            <div class="col-md-12 text-center">
+              <button class="btn btn-success">Registrar</button>
+              <button class="btn btn-primary" routerLink="/" style="margin-left: 5%;">Regresar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -18,6 +18,7 @@ import { EditMateriaComponent } from './components/edit-materia/edit-materia.com
 import { AddMateriaComponent } from './components/add-materia/add-materia.component';
 import { MostrarMateriasComponent } from './components/materia/mostrar-materias/mostrar-materias.component';
 import { RegistrarMateriaComponent } from './components/materia/registrar-materia/registrar-materia.component';
+import { LoginComponent } from './components/login/login.component';
 const appRoutes: Routes = [
   {path: '', component: EstudianteComponent},
   {path: 'addestudiante', component: AddEstudianteComponent},
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     EditMateriaComponent,
     AddMateriaComponent,
     MostrarMateriasComponent,
-    RegistrarMateriaComponent
+    RegistrarMateriaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

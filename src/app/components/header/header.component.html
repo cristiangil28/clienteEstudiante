@@ -3,11 +3,24 @@
     <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesión</button>
     <button mat-menu-item>Item 2</button>
 </mat-menu>
+
+
+<br>
+<br>
 <div class="row">
-    <div class="col-md-2 col-xs-6">
-            <button class="btn btn-success" [routerLink]="['/addestudiante']" *ngIf = "rol == 'a'">Crear Estudiante</button>
+    <div class="col-md-1 col-xs-2">
+        <button class="btn btn-success home" [routerLink]="['/']">Home</button>
+    </div>
+    <div class="col-md-2 col-xs-6" *ngIf="rol == 'a'">
+        <button class="btn btn-success" [routerLink]="['/addestudiante']">Crear Estudiante</button>
     </div>
     <div class="col-md-2 col-xs-6">
-            <button class="btn btn-success" [routerLink]="['/materias']">Listar Materias</button>
+        <button class="btn btn-success" [routerLink]="['/materias']">Listar Materias</button>
+    </div>
+    <div class="col-md-2 col-xs-6" *ngIf="rol == 'a'">
+        <button class="btn btn-success" [routerLink]="['/addmateria']">Crear Materia</button>
+    </div>
+    <div class="col-md-2 col-xs-6" *ngIf="rol != 'e'">
+        <button class="btn btn-success" [routerLink]="['/']">Listar Estudiantes</button>
     </div>
 </div>

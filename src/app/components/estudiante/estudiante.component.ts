@@ -4,6 +4,7 @@ import { Router} from '@angular/router';
 import { filter } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
 import { MatIconModule } from "@angular/material/icon";
+import { MatriculaService } from 'src/app/servicios/matricula/matricula.service';
 @Component({
   selector: 'app-estudiante',
   templateUrl: './estudiante.component.html',
@@ -17,7 +18,8 @@ export class EstudianteComponent {
   x : any;
   usuario : any;
   rol : any;
-  constructor(private estudiante: EstudianteServiceService,private router: Router, private cookie : CookieService){
+  materiasInscritasList:any = [];
+  constructor(private estudiante: EstudianteServiceService,private router: Router, private cookie : CookieService, private service :MatriculaService){
   }
   ngOnInit(){
     console.log('El componente se ha inicializado');
@@ -29,6 +31,9 @@ export class EstudianteComponent {
     this.usuario = this.cookie.get('id');
     this.rol = this.cookie.get('rol');
     this.estudiante.getEstudiantes().subscribe(x => this.estudiantesList = x);
+    if(this.cookie.get('id')){
+      this.service.getMateriasMatriculadas().subscribe(data => this.materiasInscritasList = data.filter((val: any) => {return val.id == this.cookie.get('id')})[0]['materias']);
+    }
     
   }
   deleteEstudiante(id: number){

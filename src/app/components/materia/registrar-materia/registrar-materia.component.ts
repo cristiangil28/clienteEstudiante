@@ -48,7 +48,6 @@ export class RegistrarMateriaComponent {
     }
     
     this.matriculaService.matricularMateria(this.addForm.value.id,this.addForm.value.idMateria.id).subscribe(data => {
-      console.log(data);
       if(data.error){
         Swal.fire({
           title: 'Error!',

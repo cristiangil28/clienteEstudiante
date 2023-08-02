@@ -20,7 +20,7 @@
     <div class="col-md-2 col-xs-6" *ngIf="rol == 'a'">
         <button class="btn btn-success" [routerLink]="['/addmateria']">Crear Materia</button>
     </div>
-    <div class="col-md-2 col-xs-6" *ngIf="rol != 'e'">
+    <div class="col-md-2 col-xs-6" *ngIf="rol != 'e' && rol != 'p'">
         <button class="btn btn-success" [routerLink]="['/']">Listar Estudiantes</button>
     </div>
 </div>

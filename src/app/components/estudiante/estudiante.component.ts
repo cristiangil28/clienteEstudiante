@@ -32,7 +32,7 @@ export class EstudianteComponent {
     this.rol = this.cookie.get('rol');
     this.estudiante.getEstudiantes().subscribe(x => this.estudiantesList = x);
     if(this.cookie.get('id') && this.rol != 'a'){
-      this.service.getMateriasMatriculadas().subscribe(data => this.materiasInscritasList = data.filter((val: any) => {return val.id == this.cookie.get('id')})[0]['materias']);
+      this.service.getMateriasMatriculadas().subscribe(data => this.materiasInscritasList = data.filter((val: any) => {return val.materias;})?data[0]['materias']:"");
     }
     
   }
@@ -45,11 +45,9 @@ export class EstudianteComponent {
     this.estudiante.getEstudiantes().subscribe(y => this.estudiantesList = y);
     this.materiasSuscritasLis = this.estudiantesList.filter((val: any) => {return val.id == id});
     this.materiasSuscritasLis = this.materiasSuscritasLis[0]['materias'];
-    console.log(this.materiasSuscritasLis.length)
     for(this.x = 0 ; this.x < this.materiasSuscritasLis.length; this.x++){
       this.materiasSuscritasListFinal.push(this.materiasSuscritasLis[this.x]);
     }
     this.router.navigate(['/mostrarMaterias']);
-    console.log(this.materiasSuscritasListFinal)
   }
 }

@@ -1,1 +1,13 @@
-<p>header works!</p>
+<button mat-button [matMenuTriggerFor]="menu" style="float: right;">Usuario ID: {{usuario}}</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="cerrarSesion()">Cerrar Sesión</button>
+    <button mat-menu-item>Item 2</button>
+</mat-menu>
+<div class="row">
+    <div class="col-md-2 col-xs-6">
+            <button class="btn btn-success" [routerLink]="['/addestudiante']" *ngIf = "rol == 'a'">Crear Estudiante</button>
+    </div>
+    <div class="col-md-2 col-xs-6">
+            <button class="btn btn-success" [routerLink]="['/materias']">Listar Materias</button>
+    </div>
+</div>

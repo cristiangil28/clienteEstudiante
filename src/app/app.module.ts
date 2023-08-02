@@ -19,6 +19,9 @@ import { AddMateriaComponent } from './components/add-materia/add-materia.compon
 import { MostrarMateriasComponent } from './components/materia/mostrar-materias/mostrar-materias.component';
 import { RegistrarMateriaComponent } from './components/materia/registrar-materia/registrar-materia.component';
 import { LoginComponent } from './components/login/login.component';
+import { CookieService } from 'ngx-cookie-service';
+import { MatIconModule } from "@angular/material/icon";
+import {MatMenuModule} from '@angular/material/menu';
 const appRoutes: Routes = [
   {path: '', component: EstudianteComponent},
   {path: 'addestudiante', component: AddEstudianteComponent},
@@ -28,6 +31,7 @@ const appRoutes: Routes = [
   {path: 'editmateria/:id', component: EditMateriaComponent},
   {path: 'mostrarMaterias/:id', component: MostrarMateriasComponent},
   {path: 'registrarMateria/:id', component: RegistrarMateriaComponent},
+  {path: 'login', component: LoginComponent}
 ]
 @NgModule({
   declarations: [
@@ -42,7 +46,7 @@ const appRoutes: Routes = [
     AddMateriaComponent,
     MostrarMateriasComponent,
     RegistrarMateriaComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,9 +57,11 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    MatMenuModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -31,7 +31,7 @@ export class EstudianteComponent {
     this.usuario = this.cookie.get('id');
     this.rol = this.cookie.get('rol');
     this.estudiante.getEstudiantes().subscribe(x => this.estudiantesList = x);
-    if(this.cookie.get('id')){
+    if(this.cookie.get('id') && this.rol != 'a'){
       this.service.getMateriasMatriculadas().subscribe(data => this.materiasInscritasList = data.filter((val: any) => {return val.id == this.cookie.get('id')})[0]['materias']);
     }
     

@@ -1,31 +1,33 @@
 <div class="container">
-    <div class="card">
-            <div class="card-header">
-                <app-header></app-header>
-            </div>
-            <div class="card-body">
-                    <table class="table">
-                            <thead>
-                                    <tr>
-                                            <td>ID</td>
-                                            <td>NOMBRE</td>
-                                            <td>CRÉDITOS</td>
-                                            <td *ngIf="rol == 'a'">ACCIONES</td>
-                                    </tr>
-                            </thead>
-                            <tbody>
-                                    <tr *ngFor="let materia of materiasList">
-                                            <td *ngIf="materia.id">{{materia.id}}</td>
-                                            <td *ngIf="materia.nombreMateria"> {{materia.nombreMateria}}</td>
-                                            <td *ngIf="materia.creditos">{{materia.creditos}}</td>
-                                            <td *ngIf="rol == 'a'"><button class="btn btn-primary"
-                                                            [routerLink]="['/editmateria',materia.id]">Editar</button>
-                                                    <button class="btn btn-danger"
-                                                            (click)="deleteMateria(materia.id)">Eliminar</button>
-                                            </td>
-                                    </tr>
-                            </tbody>
-                    </table>
-            </div>
-    </div>
+        <div class="card">
+                <div class="card-header">
+                        <app-header></app-header>
+                </div>
+                <div class="card-body">
+                        <table class="table">
+                                <thead>
+                                        <tr>
+                                                <td>ID</td>
+                                                <td>NOMBRE</td>
+                                                <td>CRÉDITOS</td>
+                                                <td *ngIf="rol == 'a' || rol == 'e'">ACCIONES</td>
+                                        </tr>
+                                </thead>
+                                <tbody>
+                                        <tr *ngFor="let materia of materiasList">
+                                                <td *ngIf="materia.id">{{materia.id}}</td>
+                                                <td *ngIf="materia.nombreMateria"> {{materia.nombreMateria}}</td>
+                                                <td *ngIf="materia.creditos">{{materia.creditos}}</td>
+                                                <td *ngIf="rol == 'a' || rol == 'e'">
+                                                        <button class="btn btn-primary"
+                                                                [routerLink]="['/editmateria',materia.id]" *ngIf="rol == 'a'">Editar</button>
+                                                        <button class="btn btn-danger"
+                                                                (click)="deleteMateria(materia.id)" *ngIf="rol == 'a'">Eliminar</button>
+                                                        <button class="btn btn-warning"  (click)="matricularMateria(materia.id)" *ngIf="rol == 'e'">Registrar Materia</button>
+                                                </td>
+                                        </tr>
+                                </tbody>
+                        </table>
+                </div>
+        </div>
 </div>

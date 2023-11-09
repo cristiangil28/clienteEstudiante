@@ -22,15 +22,16 @@ import { LoginComponent } from './components/login/login.component';
 import { CookieService } from 'ngx-cookie-service';
 import { MatIconModule } from "@angular/material/icon";
 import {MatMenuModule} from '@angular/material/menu';
+import { AuthService } from './servicios/proteger-ruta-service/auth.service';
 const appRoutes: Routes = [
-  {path: '', component: EstudianteComponent},
-  {path: 'addestudiante', component: AddEstudianteComponent},
-  {path: 'editestudiante/:id', component: EditEstudianteComponent},
-  {path: 'materias', component: MateriaComponent},
-  {path: 'addmateria', component: AddMateriaComponent},
-  {path: 'editmateria/:id', component: EditMateriaComponent},
-  {path: 'mostrarMaterias/:id', component: MostrarMateriasComponent},
-  {path: 'registrarMateria/:id', component: RegistrarMateriaComponent},
+  {path: '', component: EstudianteComponent, canActivate : [AuthService]},
+  {path: 'addestudiante', component: AddEstudianteComponent,canActivate : [AuthService]},
+  {path: 'editestudiante/:id', component: EditEstudianteComponent, canActivate : [AuthService]},
+  {path: 'materias', component: MateriaComponent, canActivate : [AuthService]},
+  {path: 'addmateria', component: AddMateriaComponent, canActivate : [AuthService]},
+  {path: 'editmateria/:id', component: EditMateriaComponent, canActivate : [AuthService]},
+  {path: 'mostrarMaterias/:id', component: MostrarMateriasComponent, canActivate : [AuthService]},
+  {path: 'registrarMateria/:id', component: RegistrarMateriaComponent, canActivate : [AuthService]},
   {path: 'login', component: LoginComponent}
 ]
 @NgModule({

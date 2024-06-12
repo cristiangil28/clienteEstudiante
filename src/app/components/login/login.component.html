@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-center">Login</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label>
+                    <input formControlName="usuario" placeholder="Ingrese el número de documento" name="usuario" class="form-control"
+                        id="usuario" required>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="usuario">Contraseña:</label>
+                    <input type="password" formControlName="password" placeholder="Contraseña" name="password"
+                        class="form-control" id="password" required>
+                </div>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button class="btn btn-primary">Iniciar Sesión</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

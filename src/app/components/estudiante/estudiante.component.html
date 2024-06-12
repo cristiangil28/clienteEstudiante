@@ -8,17 +8,10 @@
 <div class="container">
         <div class="card">
                 <div class="card-header">
-                        <div class="row">
-                                <div class="col-md-2 col-xs-6">
-                                        <button class="btn btn-success" [routerLink]="['/addestudiante']">Crear Estudiante</button>
-                                </div>
-                                <div class="col-md-2 col-xs-6">
-                                        <button class="btn btn-success" [routerLink]="['/materias']">Listar Materias</button>
-                                </div>
-                        </div>
+                        <app-header></app-header>
                 </div>
                 <div class="card-body">
-                        <table class="table">
+                        <table class="table" *ngIf="rol == 'a'">
                                 <thead>
                                         <tr>
                                                 <td>ID</td>
@@ -47,6 +40,30 @@
                                         </tr>
                                 </tbody>
                         </table>
+                        <div class="container" *ngIf="rol == 'e'">
+                                <div class="row">
+                                        <h2 class="text-center">Materias inscritas</h2>
+                                </div>
+                                <div class="row">
+                                        <table class="table">
+                                                <thead>
+                                                        <tr>
+                                                            <td>ID</td>
+                                                            <td>NOMBRE MATERIA</td>
+                                                            <td>CREDITOS</td>
+                                                        </tr>
+                                                </thead>
+                                                <tbody>
+                                                        <tr *ngFor="let estudiante of materiasInscritasList">
+                                                                <td *ngIf="estudiante.id">{{estudiante.id}}</td>
+                                                                <td *ngIf="estudiante.nombreMateria">{{estudiante.nombreMateria}}</td>
+                                                                <td *ngIf="estudiante.creditos">{{estudiante.creditos}}</td>
+                                                        </tr>
+                                                </tbody>
+                                        </table>
+                                </div>
+                        </div>
+                        
                 </div>
         </div>
 </div>
